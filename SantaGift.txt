@@ -1,0 +1,107 @@
+package SantaGame;
+
+import java.util.Scanner;
+
+public class SantaGift{
+	
+	String Gift1;
+	String Gift2;
+	String Gift3;
+	String Gift4;
+	String Gift5;
+	
+	SantaGift next1;
+	SantaGift  next2;
+	SantaGift next3;
+	SantaGift next4;
+    SantaGift next5;
+	
+	public  SantaGift  (SantaGift next1,SantaGift next2,SantaGift next3,SantaGift next4,SantaGift next5,
+	String Gift1, String Gift2, String Gift3, String Gift4,String Gift5){
+	
+				   this.Gift1 = Gift1;
+			        this.Gift2 = Gift2;
+			        this.Gift3 = Gift3;
+			        this.Gift4 = Gift4;
+			        this.next1 = next1;
+			        this.next2 = next2;
+			        this.next3 = next3;
+			        this.next4 = next4;
+			      }
+
+	public SantaGift(String string, String string2, String string3, String string4, Object object, Object object2,
+			Object object3, Object object4) {
+		
+	}
+
+	public void run() {
+        try (Scanner scanner = new Scanner(System.in)) {
+			while (true) {
+			    System.out.println("Choose one of the following options: ");
+			    System.out.println("1= " + Gift1);
+			    System.out.println("2= " + Gift2);
+			    System.out.println("3= " + Gift3);
+			    System.out.println("4= " + Gift4);
+			    System.out.println("5= " + Gift5);
+ 
+			    int choice = scanner.nextInt();
+ 
+			    if (choice == 1) {
+ 
+			        if (next1 != null) {
+ 
+			            System.out.println("Please go right");
+ 
+			            next1.run();
+ 
+			        } else {
+ 
+			            System.out.println("You have reached a blockage. Going back please.");
+ 
+			        }
+ 
+			    } else if (choice == 2) {
+ 
+			        if (next2 != null) {
+ 
+			            System.out.println("Please left");
+ 
+			            next2.run();
+ 
+			        } else {
+ 
+			            System.out.println("You have reached a blockage. Going back please.");
+ 
+			        }
+ 
+			    } else if (choice == 3) {
+ 
+			        if (next3 != null) {
+ 
+			            System.out.println("Please go back");
+ 
+			            next3.run();
+ 
+			        } else {
+ 
+			            System.out.println("You have reached a blockage. Going back please");
+
+			        }
+			    } else if (choice == 4) {
+			        if (next4 != null) {
+			            System.out.println("Please go forward");
+			            next4.run();
+			        } else {
+			            System.out.println("You have reached a blockage. Going back please");
+			            	
+			        }
+			    } else {
+			        System.out.println("Invalid option. Try again.");
+ 
+			    }
+			}
+		}
+    }
+ 
+}
+ 
